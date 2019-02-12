@@ -8,3 +8,6 @@
 2、修改authon.html授权认证配置   
 3、启动PayDemoApplication  
 4、在微信中访问http://XXXXX/pay  
+
+#### 详细说明
+https://juejin.im/post/5c629e12f265da2dde06ce49
