@@ -1,0 +1,7 @@
+wechat:
+  mpAppId:   # 公众号的APPid
+  mchId:  # 商户平台的账号
+  secret:  # 公众号的AppSecret开发者密码
+  mchKey:  #  商户平台设置的API密钥
+  keyPath: apiclient_cert.p12 # 商户平台中API证书
+  notifyUrl: http://XXX/notify # 用户支付成功后，微信回调地址

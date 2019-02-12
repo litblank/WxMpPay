@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转账</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="//res.layui.com/layui/dist/css/layui.css"  media="all">
+</head>
+<body>
+
+    <form action="/goodspay" method="get">
+        <input  value="" id="code1" name="code" hidden/>
+
+        <fieldset class="layui-elem-field site-demo-button" style="margin-top: 20%;margin-bottom: -30%;">
+            <legend style="font-size: 50px;">下单支付0.01元</legend>
+            <div style="margin-top: 70px;margin-left: 20px;margin-right: 20px;margin-bottom: 30px;">
+                <button class="layui-btn layui-btn-primary" style="width: 100%;height: auto;background-color: #36e0d2;
+                    font-size: 100px;">微信支付</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <form action="/goodspay" method="get" style="padding-top: 15%;">
+        <input  value="" id="code2" name="code" hidden/>
+
+        <fieldset class="layui-elem-field site-demo-button" style="margin-top: 30%;margin-bottom: -30%;">
+            <legend style="font-size: 50px;">输入金额下单支付</legend>
+            <input  value="" id="money" name="money" style="width: 50%;height: 100px;font-size: 100px;"   placeholder="输入金额"/>
+            <div style="margin-top: 70px;margin-left: 20px;margin-right: 20px;margin-bottom: 30px;">
+                <button class="layui-btn layui-btn-primary" style="width: 100%;height: auto;background-color: #36e0d2;
+                    font-size: 100px;">微信支付</button>
+            </div>
+        </fieldset>
+    </form>
+
+
+<script>
+    //转码
+    function parse_url(url) { //定义函数
+        var pattern = /(\w+)=(\w+)/ig; //定义正则表达式
+        var parames = {}; //定义数组
+        url.replace(pattern, function (a, b, c) {
+            parames[b] = c;
+        });
+        return parames; //返回这个数组.
+    }
+    //获取当前url   取到code
+    var url = window.location.href;
+    var params = parse_url(url);
+    $("#code1").val(params.code);
+    $("#code2").val(params.code);
+
+</script>
+</body>
+
+</html>
